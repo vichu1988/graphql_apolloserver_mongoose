@@ -1,5 +1,5 @@
 {
-  "name": "apollo-starter-kit",
+  "name": "graphql_apolloserver_mongoose",
   "version": "0.1.0",
   "description": "Minimal set of code to write a GraphQL server with Apollo graphql-tools",
   "scripts": {
@@ -8,22 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/apollostack/apollo-starter-kit.git"
+    "url": ""
   },
   "keywords": [
     "Node.js",
     "Javascript",
     "GraphQL",
     "Express",
-    "Apollo",
-    "Meteor"
+    "Apollo"
   ],
-  "author": "Jonas Helfer <jonas@helfer.email>",
+  "author": "Shalini Jha",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/apollostack/apollo-starter-kit/issues"
-  },
-  "homepage": "https://github.com/apollostack/apollo-starter-kit#readme",
   "dependencies": {
     "babel-core": "^6.5.2",
     "babel-loader": "6.2.3",
