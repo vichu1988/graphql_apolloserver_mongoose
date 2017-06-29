@@ -1,1 +1,13 @@
-{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"shoppingcart.Cart"}]}
+{
+  "options": {},
+  "indexes": [
+    {
+      "v": 2,
+      "key": {
+        "_id": 1
+      },
+      "name": "_id_",
+      "ns": "shoppingcart.Cart"
+    }
+  ]
+}

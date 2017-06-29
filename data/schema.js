@@ -90,5 +90,4 @@ const typeDefinitions = `
         mutation: Mutation
     }
 `;
-
 export default [typeDefinitions];
