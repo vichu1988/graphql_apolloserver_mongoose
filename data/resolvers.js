@@ -1,4 +1,4 @@
-import { Products, Reviewers } from './connectors';
+import { Products, Reviewers, Cart } from './connectors';
 import fetch from 'node-fetch';
 const prepare = (o) => {
   o._id = o._id.toString()
@@ -12,6 +12,12 @@ const resolvers = {
         },
         products: async () => {
           return (await Products.find({}));
+        },
+        cartList: async () => {
+          return (await Cart.find({}));
+        },
+        cart: async (root, {_id}) => {
+          return (await Cart.findById(_id));
         },
         reviewers: async () => {
           return (await Reviewers.find({}));
@@ -43,6 +49,19 @@ const resolvers = {
         },
         user : async ({userId}) => {
           return (await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`).then(res => res.json()))
+        }
+      },
+      Mutation : {
+        addToCart : async (root, args, context, info) => {
+          const data = new Cart(args)
+          return (await data.save());
+        },
+        removeFromCart : async (root, args) => {
+          console.log(args)
+          return (await Cart.findByIdAndRemove(args._id).exec());
+        },
+        removeAll : async (root, args) => {
+          return (await Cart.remove({}).exec());
         }
       }
       

@@ -4,6 +4,8 @@ const typeDefinitions = `
         products: [Product],
         reviewers: [Reviewer]
         reviewer(_id: String): Reviewer,
+        cartList : [Cart],
+        cart(_id: String): Cart,
         posts: [Post],
         post(id: String): Post,
         users: [User],
@@ -27,6 +29,17 @@ const typeDefinitions = `
         description: String,
         reviewers : [String],
         reviewersInfo: [Reviewer]
+    }
+
+    type Cart {
+      _id: String,
+        name: String,
+        brand: String,
+        imageUrl: String,
+        price: String,
+        discountPrice: String,
+        description: String,
+        reviewers : [String],
     }
 
     type Comment {
@@ -54,8 +67,27 @@ const typeDefinitions = `
         user: User
 
     }
+    type Mutation {
+      addToCart (
+        name: String,
+        brand: String,
+        imageUrl: String,
+        price:String,
+        description:String,
+        discountPrice:String,
+        reviewers : [String]) : Cart
+
+      removeFromCart (
+        _id: String
+      ) : Cart
+
+      removeAll (
+        _id: String
+      ) : Cart
+    }
     schema {
-        query: Query
+        query: Query,
+        mutation: Mutation
     }
 `;
 
